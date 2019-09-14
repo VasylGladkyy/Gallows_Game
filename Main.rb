@@ -1,3 +1,4 @@
+#метод require дозволяє підключити файл який містить в собі певну логіку
 require './Methods.rb'
 letters = get_letters
 cls
