@@ -27,7 +27,11 @@ def check_input(user_input,letters,goodLettersArray,badLettersArray)
     puts "Ви вже вводили дану букву!"
     return 0
   end
-  if letters.include? user_input
+  if letters.include?(user_input) ||
+      (user_input == 'е' && letters.include?('ё')) ||
+      (user_input == 'ё' && letters.include?('е')) ||
+      (user_input == 'и' && letters.include?('й')) ||
+      (user_input == 'й' && letters.include?('и'))
     goodLettersArray<<user_input
   if(goodLettersArray.uniq.size==letters.uniq.size)
     return 1
