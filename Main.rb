@@ -1,22 +1,15 @@
 #метод require дозволяє підключити файл який містить в собі певну логіку
-require './Methods.rb'
-letters = get_letters
-cls
+require './game.rb'
+require './result_console_print.rb'
 
-errorsCounter=0
-goodLettersArray=[]
-badLettersArray=[]
+printer=ResultConsolePrint.new
+slovo = ARGV[0]
+printer.cls
+game = Game.new(slovo)
 
-while errorsCounter < 7 do
-  print_status letters,goodLettersArray, badLettersArray,errorsCounter
-  print "\nВведіть наступну букву\n->"
-  user_input=get_user_input
-   result=check_input user_input,letters,goodLettersArray,badLettersArray
-  if result==-1
-     errorsCounter+=1
-   elsif result==1
-     break
-   end
+while game.status ==0 do
+  printer.print_status game
+  game.ask_next_letter
 end
 
-print_status letters,goodLettersArray, badLettersArray,errorsCounter
+printer.print_status game
