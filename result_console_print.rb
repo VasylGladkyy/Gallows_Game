@@ -5,6 +5,7 @@ class ResultConsolePrint
     puts "Слово: "+ get_word_for_print(game.letters,game.good_letters)
     puts "Помилки #{game.errors}:#{game.bad_letters.join(", ")}"
 
+    print_gallows(game.errors)# to do
     if(game.errors>=7)
       puts "Ви програли :("
     else
@@ -30,6 +31,124 @@ class ResultConsolePrint
 
   def cls
     system("clear")||system("cls")
+  end
+
+  def print_gallows(errors)
+    case errors
+    when 0
+      puts "
+          _______
+          |/
+          |
+          |
+          |
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 1
+      puts "
+          _______
+          |/
+          |     ( )
+          |
+          |
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 2
+      puts "
+          _______
+          |/
+          |     ( )
+          |      |
+          |
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 3
+      puts "
+          _______
+          |/
+          |     ( )
+          |      |_
+          |        \\
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 4
+      puts "
+          _______
+          |/
+          |     ( )
+          |     _|_
+          |    /   \\
+          |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+    when 5
+      puts "
+          _______
+          |/
+          |     ( )
+          |     _|_
+          |    / | \\
+          |      |
+          |
+          |
+          |
+        __|________
+        |         |
+        "
+
+    when 6
+      puts "
+          _______
+          |/
+          |     ( )
+          |     _|_
+          |    / | \\
+          |      |
+          |     / \\
+          |    /   \\
+          |
+        __|________
+        |         |
+        "
+    when 7
+      puts "
+          _______
+          |/     |
+          |     (_)
+          |     _|_
+          |    / | \\
+          |      |
+          |     / \\
+          |    /   \\
+          |
+        __|________
+        |         |
+        "
+    end
   end
 
 end
