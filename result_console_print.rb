@@ -1,9 +1,7 @@
 class ResultConsolePrint
-  def initialize
-
-  end
 
   def print_status(game)
+    cls
     puts "Слово: "+ get_word_for_print(game.letters,game.good_letters)
     puts "Помилки #{game.errors}:#{game.bad_letters.join(", ")}"
 
@@ -34,6 +32,4 @@ class ResultConsolePrint
     system("clear")||system("cls")
   end
 
-
 end
-
