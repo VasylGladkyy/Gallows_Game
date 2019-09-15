@@ -59,13 +59,12 @@ class Game
         (user_input == 'й' && @letters.include?('и'))
       @good_letters<<user_input
       if(@good_letters.uniq.size==@letters.uniq.size)
-        @status+= 1
+        @status= 1
       end
     else
       @bad_letters<<user_input
-      @status+= -1
+      @errors+=1
       if @errors>=7
-        @status>=7
         @status=-1
       end
     end
