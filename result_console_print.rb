@@ -1,0 +1,2 @@
+class ResultConsolePrint
+end
