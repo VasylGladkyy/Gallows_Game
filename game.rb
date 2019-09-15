@@ -30,9 +30,14 @@ class Game
 
   def get_letters(slovo)
     if(slovo==nil || slovo == "")
-      abort "Ви не ввели слово для гри!!!"
+      slovo=""
+      while slovo == ""
+        print "Введіть слово!\n->"
+        slovo=STDIN.gets.chomp
+      end
+      return slovo.split""
     end
-    return slovo.split("")
+    return slovo.split ""
   end
 
   def ask_next_letter
