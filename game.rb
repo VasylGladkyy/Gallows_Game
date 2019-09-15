@@ -6,25 +6,25 @@ class Game
     @bad_letters=[]
     @status=0
   end
-
+#В останньому рядку Ruby дозволяє не писати метод return
   def letters
-    return @letters;
+    @letters;
   end
 
   def errors
-    return @errors;
+    @errors;
   end
 
   def good_letters
-    return @good_letters;
+    @good_letters;
   end
 
   def bad_letters
-    return @bad_letters
+    @bad_letters
   end
 
   def status
-    return @status;
+    @status;
   end
 
 
