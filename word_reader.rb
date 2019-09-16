@@ -1,6 +1,6 @@
 class WordReader
   def initialize(file)
-    @file_path=File.dirname(__FILE__ )+file
+    @file_path=file
   end
 
   def read_from_file
