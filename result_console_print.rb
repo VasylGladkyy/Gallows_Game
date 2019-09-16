@@ -1,4 +1,7 @@
 class ResultConsolePrint
+  def initialize(status_images)
+    @status_images_array=status_images
+  end
 
   def print_status(game)
     cls
@@ -8,6 +11,7 @@ class ResultConsolePrint
     print_gallows(game.errors)# to do
     if(game.errors>=7)
       puts "Ви програли :("
+      puts "А загаданим словом було:#{game.letters.join("")}"
     else
       if game.letters.uniq.size==game.good_letters.uniq.size
         puts "Ви виграли :)"
@@ -36,119 +40,21 @@ class ResultConsolePrint
   def print_gallows(errors)
     case errors
     when 0
-      puts "
-          _______
-          |/
-          |
-          |
-          |
-          |
-          |
-          |
-          |
-        __|________
-        |         |
-        "
+      puts @status_images_array[0]
     when 1
-      puts "
-          _______
-          |/
-          |     ( )
-          |
-          |
-          |
-          |
-          |
-          |
-        __|________
-        |         |
-        "
+      puts @status_images_array[1]
     when 2
-      puts "
-          _______
-          |/
-          |     ( )
-          |      |
-          |
-          |
-          |
-          |
-          |
-        __|________
-        |         |
-        "
+      puts @status_images_array[2]
     when 3
-      puts "
-          _______
-          |/
-          |     ( )
-          |      |_
-          |        \\
-          |
-          |
-          |
-          |
-        __|________
-        |         |
-        "
+      puts @status_images_array[3]
     when 4
-      puts "
-          _______
-          |/
-          |     ( )
-          |     _|_
-          |    /   \\
-          |
-          |
-          |
-          |
-        __|________
-        |         |
-        "
+      puts @status_images_array[4]
     when 5
-      puts "
-          _______
-          |/
-          |     ( )
-          |     _|_
-          |    / | \\
-          |      |
-          |
-          |
-          |
-        __|________
-        |         |
-        "
-
+      puts @status_images_array[5]
     when 6
-      puts "
-          _______
-          |/
-          |     ( )
-          |     _|_
-          |    / | \\
-          |      |
-          |     / \\
-          |    /   \\
-          |
-        __|________
-        |         |
-        "
+      puts @status_images_array[6]
     when 7
-      puts "
-          _______
-          |/     |
-          |     (_)
-          |     _|_
-          |    / | \\
-          |      |
-          |     / \\
-          |    /   \\
-          |
-        __|________
-        |         |
-        "
+      puts @status_images_array[7]
     end
   end
-
 end
