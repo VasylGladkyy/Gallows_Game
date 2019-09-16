@@ -1,0 +1,2 @@
+class ImageReader
+end
