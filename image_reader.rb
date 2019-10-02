@@ -13,10 +13,15 @@ class ImageReader
   end
 
   def getImage(file)
-    if File.exist? file
+    begin
       f=File.new file,"r:UTF-8"
       return f.readlines
+    rescue SystemCallError => error
+      arr=[]
+      (7).times do
+        arr<<error.message
+      end
+      return arr
     end
-    return nil
   end
 end
