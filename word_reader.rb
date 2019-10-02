@@ -4,15 +4,13 @@ class WordReader
   end
 
   def read_from_file
-    returnValue="error"
-    if File.exist? @file_path
+    begin
       f=File.new @file_path,"r:UTF-8"
       returnValue=f.readlines.sample.chomp
       f.close
-      return returnValue
-    else
-      return returnValue
-    end
+    rescue SystemCallError=>error
+      abort "Проблеми при роботі з файлом зі словами\nДетальніше:"+error.message
+      end
   end
 
 end
