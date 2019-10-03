@@ -1,10 +1,11 @@
 #метод require дозволяє підключити файл який містить в собі певну логіку
-current_path=File.dirname(__FILE__ )
-require current_path+'/game.rb'
-require current_path+'/result_console_print.rb'
-require current_path+'/word_reader.rb'
-require current_path+'/image_reader.rb'
 
+require_relative 'game.rb'
+require_relative 'result_console_print.rb'
+require_relative 'word_reader.rb'
+require_relative 'image_reader.rb'
+
+current_path=File.dirname(__FILE__ )
 image_reader=ImageReader.new current_path+"/data/image/"
 printer=ResultConsolePrint.new image_reader.getImagesArray
 reader=WordReader.new current_path+"/data/words.txt"
